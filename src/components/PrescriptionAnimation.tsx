@@ -6,53 +6,64 @@ import {
   Upload, 
   CheckCircle, 
   MessageCircle, 
-  FileText,
-  Smartphone
+  FileText
 } from 'lucide-react';
 
 export default function PrescriptionAnimation() {
   const [stage, setStage] = useState<'upload' | 'code' | 'whatsapp'>('upload');
+  const [isHovered, setIsHovered] = useState(false);
 
-  // Animation Loop Choreography with deliberate longer pauses
+  // Animation Loop Choreography with interactive hover-to-pause behavior
   useEffect(() => {
     let active = true;
-    
-    const cycle = async () => {
-      if (!active) return;
-      // Stage 1: Upload (Duration: 3.5s)
-      setStage('upload');
-      await new Promise(resolve => setTimeout(resolve, 3500));
+    let timer: NodeJS.Timeout;
+    let timeElapsed = 0;
+    const stageDuration = 6000; // 6 seconds per stage for comfortable reading
 
+    const tick = () => {
       if (!active) return;
-      // Stage 2: Code Generation (Duration: 3.5s)
-      setStage('code');
-      await new Promise(resolve => setTimeout(resolve, 3500));
 
-      if (!active) return;
-      // Stage 3: Send via WhatsApp (Duration: 5s)
-      setStage('whatsapp');
-      await new Promise(resolve => setTimeout(resolve, 5000));
-
-      if (active) {
-        cycle();
+      if (!isHovered) {
+        timeElapsed += 100;
+        if (timeElapsed >= stageDuration) {
+          timeElapsed = 0;
+          setStage((prev) => {
+            if (prev === 'upload') return 'code';
+            if (prev === 'code') return 'whatsapp';
+            return 'upload';
+          });
+        }
       }
+      
+      timer = setTimeout(tick, 100);
     };
 
-    cycle();
+    tick();
+
     return () => {
       active = false;
+      clearTimeout(timer);
     };
-  }, []);
+  }, [isHovered]);
 
   return (
     <motion.div
-      className="relative w-full max-w-[340px] sm:max-w-[380px] h-[340px] sm:h-[380px] flex items-center justify-center select-none"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="relative w-full max-w-[340px] sm:max-w-[380px] h-[340px] sm:h-[380px] flex items-center justify-center select-none cursor-pointer"
       style={{ perspective: 1200 }}
       whileHover={{ rotateY: -4, rotateX: 4, scale: 1.01 }}
       transition={{ type: "spring", stiffness: 200, damping: 25 }}
     >
       {/* Dynamic Background Glows matching brand system */}
       <div className="absolute inset-0 bg-gradient-to-tr from-teal-800/5 to-brand-secondary/5 rounded-3xl blur-2xl pointer-events-none" />
+
+      {/* Hover Pause indicator */}
+      {isHovered && (
+        <div className="absolute top-2 right-4 text-[9px] font-bold text-teal-800 bg-teal-50/80 border border-teal-100/50 px-2 py-0.5 rounded-full z-20 animate-pulse">
+          ⏸ تم إيقاف العرض مؤقتاً
+        </div>
+      )}
 
       <AnimatePresence mode="wait">
         {/* STAGE 1: Uploading the Prescription */}
@@ -72,7 +83,7 @@ export default function PrescriptionAnimation() {
               <h3 className="text-base sm:text-lg font-black text-brand-primary mt-3 text-right">
                 ارفع صورة أو ملف الروشتة الطبية
               </h3>
-              <p className="text-xs text-gray-500 mt-1.5 text-right leading-relaxed">
+              <p className="text-xs text-gray-500 mt-1.5 text-right leading-relaxed font-semibold">
                 التقط صورة للروشتة بهاتفك أو اختر ملف الوصفة الطبية من جهازك بشكل آمن تماماً.
               </p>
             </div>
@@ -108,7 +119,7 @@ export default function PrescriptionAnimation() {
               <h3 className="text-base sm:text-lg font-black text-brand-primary mt-3 text-right">
                 إنشاء كود مرجعي فوري للطلب
               </h3>
-              <p className="text-xs text-gray-500 mt-1.5 text-right leading-relaxed">
+              <p className="text-xs text-gray-500 mt-1.5 text-right leading-relaxed font-semibold">
                 يقوم النظام بتأكيد استلام الملف وتوليد رمز تتبع فريد لطلبك.
               </p>
             </div>
@@ -146,7 +157,7 @@ export default function PrescriptionAnimation() {
               <h3 className="text-base sm:text-lg font-black text-brand-primary mt-3 text-right">
                 تأكيد وتجهيز الطلب عبر واتساب
               </h3>
-              <p className="text-xs text-gray-500 mt-1.5 text-right leading-relaxed">
+              <p className="text-xs text-gray-500 mt-1.5 text-right leading-relaxed font-semibold">
                 اضغط على زر الإرسال لفتح محادثة واتساب مع الصيدلي لإرسال كود الروشتة والبدء في تحضير دوائك.
               </p>
             </div>

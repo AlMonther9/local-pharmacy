@@ -106,11 +106,36 @@ export default function Catalog({ initialItems, config }: CatalogProps) {
             </motion.h2>
 
             <motion.p
-              className="text-xs md:text-lg text-gray-600 max-w-2xl mb-6 font-medium leading-relaxed"
+              className="text-xs md:text-lg text-gray-600 max-w-2xl mb-4 font-medium leading-relaxed"
               variants={itemVariants}
             >
               تصفح الكتالوج المباشر، ابحث عن أدويتك أو قم برفع صورتها الطبية (الروشتة) ونقوم بتجهيز طلبيتك للتوصيل الفوري أو الاستلام.
             </motion.p>
+
+            {/* Feature Points Grid */}
+            <motion.div 
+              className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6 w-full max-w-2xl text-right"
+              variants={itemVariants}
+            >
+              <div className="flex items-center gap-2.5 bg-white/70 border border-teal-900/5 px-4 py-2.5 rounded-2xl shadow-xs">
+                <div className="w-8 h-8 rounded-xl bg-teal-50 flex items-center justify-center text-brand-primary shrink-0">
+                  <Search className="w-4.5 h-4.5" />
+                </div>
+                <div className="text-right">
+                  <h4 className="text-xs font-black text-brand-primary">البحث والتصفية الفورية</h4>
+                  <p className="text-[10px] text-gray-400 font-semibold mt-0.5">تحقق من توفر الأدوية وأسعارها الرسمية</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2.5 bg-white/70 border border-teal-900/5 px-4 py-2.5 rounded-2xl shadow-xs">
+                <div className="w-8 h-8 rounded-xl bg-teal-50 flex items-center justify-center text-brand-primary shrink-0">
+                  <Upload className="w-4.5 h-4.5" />
+                </div>
+                <div className="text-right">
+                  <h4 className="text-xs font-black text-brand-primary">تجهيز الروشتة المباشر</h4>
+                  <p className="text-[10px] text-gray-400 font-semibold mt-0.5">ارفع صورة الوصفة وسيتم تحضيرها فوراً</p>
+                </div>
+              </div>
+            </motion.div>
 
             <motion.div
               className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-3 w-full max-w-md"
