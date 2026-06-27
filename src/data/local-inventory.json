@@ -1,0 +1,110 @@
+[
+  {
+    "id": "item-1",
+    "nameNameAr": "بنادول إكسترا",
+    "nameNameEn": "Panadol Extra",
+    "category": "أدوية",
+    "price": 68,
+    "isAvailable": true,
+    "descriptionAr": "مسكن للآلام خفيف على المعدة وخافض للحرارة، يحتوي على باراسيتامول وكافيين."
+  },
+  {
+    "id": "item-2",
+    "nameNameAr": "كونجيستال أقراص",
+    "nameNameEn": "Congestal Tablets",
+    "category": "أدوية",
+    "price": 38.5,
+    "isAvailable": true,
+    "descriptionAr": "مضاد للبرد، الرشح، الحساسية، والجيوب الأنفية."
+  },
+  {
+    "id": "item-3",
+    "nameNameAr": "أوجمنتين ١ جرام",
+    "nameNameEn": "Augmentin 1g",
+    "category": "مضادات حيوية",
+    "price": 105,
+    "isAvailable": true,
+    "descriptionAr": "مضاد حيوي واسع المجال لعلاج الالتهابات البكتيرية."
+  },
+  {
+    "id": "item-4",
+    "nameNameAr": "سي ريتارد كبسولات",
+    "nameNameEn": "C-Retard Caps",
+    "category": "فيتامينات ومكملات",
+    "price": 28,
+    "isAvailable": true,
+    "descriptionAr": "فيتامين سي ممتد المفعول لدعم المناعة والوقاية من نزلات البرد."
+  },
+  {
+    "id": "item-5",
+    "nameNameAr": "سيتافيل لوشن منظف للبشرة ٢٣٦ مل",
+    "nameNameEn": "Cetaphil Gentle Skin Cleanser 236ml",
+    "category": "مستحضرات تجميل",
+    "price": 420,
+    "isAvailable": true,
+    "descriptionAr": "منظف لطيف وخالٍ من الصابون للبشرة الحساسة والجافة."
+  },
+  {
+    "id": "item-6",
+    "nameNameAr": "شامبو سانوسان للأطفال ٥٠٠ مل",
+    "nameNameEn": "Sanosan Baby Bath & Shampoo 500ml",
+    "category": "أطفال",
+    "price": 245,
+    "isAvailable": true,
+    "descriptionAr": "شامبو وسائل استحمام بتركيبة طبيعية لطيفة لعين وبشرة الرضيع."
+  },
+  {
+    "id": "item-7",
+    "nameNameAr": "جهاز قياس ضغط الدم بيورير BM27",
+    "nameNameEn": "Beurer BM27 Blood Pressure Monitor",
+    "category": "أجهزة ورعاية صحية",
+    "price": 1850,
+    "isAvailable": true,
+    "descriptionAr": "جهاز ديجيتال لقياس ضغط الدم من أعلى الذراع، دقة عالية وسهل الاستخدام."
+  },
+  {
+    "id": "item-8",
+    "nameNameAr": "شرائط وان تاتش سيليكت بلس ٥٠ شريط",
+    "nameNameEn": "OneTouch Select Plus 50 Strips",
+    "category": "أجهزة ورعاية صحية",
+    "price": 410,
+    "isAvailable": false,
+    "descriptionAr": "شرائط اختبار نسبة السكر في الدم لمرضى السكري، دقة ونتائج سريعة."
+  },
+  {
+    "id": "item-9",
+    "nameNameAr": "بخاخ أنف أوتريفين للأطفال",
+    "nameNameEn": "Otrivin Pediatric Nasal Spray",
+    "category": "أدوية",
+    "price": 25,
+    "isAvailable": true,
+    "descriptionAr": "بخاخ للأنف يساعد على إزالة الاحتقان ويسهل التنفس للأطفال."
+  },
+  {
+    "id": "item-10",
+    "nameNameAr": "كريم لاروش بوزيه إيفاكلار ديو+",
+    "nameNameEn": "La Roche-Posay Effaclar Duo+",
+    "category": "مستحضرات تجميل",
+    "price": 650,
+    "isAvailable": true,
+    "descriptionAr": "علاج متكامل للبشرة المعرضة للشوائب وحب الشباب ومقاومة البقع."
+  },
+  {
+    "id": "item-11",
+    "nameNameAr": "حفاضات فاين بيبي مقاس ٤ كبير ٦٠ حفاضة",
+    "nameNameEn": "Fine Baby Diapers Size 4 Large 60 pcs",
+    "category": "أطفال",
+    "price": 295,
+    "isAvailable": true,
+    "descriptionAr": "حفاضات عالية الامتصاص بتقنية لحماية بشرة الطفل من الالتهابات."
+  },
+  {
+    "id": "item-12",
+    "nameNameAr": "سنترم لوتين ٣٠ قرص",
+    "nameNameEn": "Centrum with Lutein 30 Tabs",
+    "category": "فيتامينات ومكملات",
+    "price": 350,
+    "isAvailable": false,
+    "descriptionAr": "فيتامينات متعددة ومعادن متكاملة لدعم الحيوية والنشاط العام."
+  }
+]
