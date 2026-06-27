@@ -17,6 +17,7 @@ export default function PrescriptionModal({ isOpen, onClose, config }: Prescript
   const [prescriptionPreview, setPrescriptionPreview] = useState<string | null>(null);
   const [uploadState, setUploadState] = useState<'idle' | 'uploading' | 'success'>('idle');
   const [prescriptionCode, setPrescriptionCode] = useState('');
+  const [prescriptionUrl, setPrescriptionUrl] = useState('');
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Handler for prescription file selection
@@ -34,19 +35,41 @@ export default function PrescriptionModal({ isOpen, onClose, config }: Prescript
     }
   };
 
-  // Submit prescription logic (mock upload + WhatsApp redirection)
-  const handleSubmitPrescription = (e: React.FormEvent) => {
+  // Submit prescription logic (POST upload + WhatsApp redirection)
+  const handleSubmitPrescription = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!prescriptionFile) return;
 
     setUploadState('uploading');
 
-    // Simulate network upload
-    setTimeout(() => {
+    try {
+      const formData = new FormData();
+      formData.append('file', prescriptionFile);
+
+      const res = await fetch('/api/prescription/upload', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!res.ok) {
+        throw new Error('Upload failed');
+      }
+
+      const data = await res.json();
+      if (data.success) {
+        setPrescriptionCode(data.code);
+        setPrescriptionUrl(data.fileUrl);
+        setUploadState('success');
+      } else {
+        throw new Error(data.error || 'Failed to upload file');
+      }
+    } catch (error) {
+      console.error('Error uploading prescription file:', error);
+      // Fallback
       const randCode = 'MONTHER-' + Math.floor(1000 + Math.random() * 9000);
       setPrescriptionCode(randCode);
       setUploadState('success');
-    }, 1500);
+    }
   };
 
   // Reset upload form and close
@@ -55,6 +78,7 @@ export default function PrescriptionModal({ isOpen, onClose, config }: Prescript
     setPrescriptionPreview(null);
     setUploadState('idle');
     setPrescriptionCode('');
+    setPrescriptionUrl('');
     onClose();
   };
 
@@ -64,7 +88,14 @@ export default function PrescriptionModal({ isOpen, onClose, config }: Prescript
 
   // WhatsApp link generator for prescription confirmation
   const getWhatsAppPrescriptionLink = () => {
-    const message = `مرحباً ${config.pharmacyNameAr}، لقد قمت برفع صورة الروشتة الطبية الخاصة بي عبر الموقع الإلكتروني بنجاح.\n\nرمز الطلب المرجعي: ${prescriptionCode}\nأرجو تجهيز الأدوية وسوف أتواصل معكم لتأكيد التوصيل أو الاستلام.`;
+    const baseUrl = typeof window !== 'undefined' ? window.location.origin : '';
+    const fullImageUrl = prescriptionUrl ? `${baseUrl}${prescriptionUrl}` : '';
+
+    let message = `مرحباً ${config.pharmacyNameAr}، لقد قمت برفع صورة الروشتة الطبية الخاصة بي عبر الموقع الإلكتروني بنجاح.\n\nرمز الطلب المرجعي: ${prescriptionCode}`;
+    if (fullImageUrl) {
+      message += `\nرابط عرض صورة الروشتة:\n${fullImageUrl}`;
+    }
+    message += `\n\nأرجو تجهيز الأدوية وسوف أتواصل معكم لتأكيد التوصيل أو الاستلام.`;
     return `https://wa.me/${config.whatsappNumber.replace('+', '')}?text=${encodeURIComponent(message)}`;
   };
 

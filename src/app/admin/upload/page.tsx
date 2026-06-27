@@ -37,6 +37,10 @@ export default function AdminPage() {
   const [actionError, setActionError] = useState('');
   const [isSavingSettings, setIsSavingSettings] = useState(false);
 
+  // Uploaded prescriptions list
+  const [prescriptions, setPrescriptions] = useState<{ code: string; filename: string; url: string; createdAt: string; size: number }[]>([]);
+  const [isLoadingPrescriptions, setIsLoadingPrescriptions] = useState(false);
+
   // Check sessionStorage for existing auth
   useEffect(() => {
     const savedPassword = sessionStorage.getItem('admin_pwd');
@@ -70,6 +74,21 @@ export default function AdminPage() {
     }
   };
 
+  const fetchPrescriptions = async () => {
+    setIsLoadingPrescriptions(true);
+    try {
+      const res = await fetch('/api/admin/prescriptions');
+      if (res.ok) {
+        const data = await res.json();
+        setPrescriptions(data.prescriptions || []);
+      }
+    } catch (err) {
+      console.error('Failed to load prescriptions:', err);
+    } finally {
+      setIsLoadingPrescriptions(false);
+    }
+  };
+
   // Password verification
   const verifyPassword = async (pwd: string, bypassSession = false) => {
     setIsVerifying(true);
@@ -88,6 +107,7 @@ export default function AdminPage() {
           sessionStorage.setItem('admin_pwd', pwd);
         }
         await fetchConfig();
+        await fetchPrescriptions();
       } else {
         setAuthError(data.error || 'كلمة المرور غير صحيحة');
         if (bypassSession) {
@@ -310,6 +330,73 @@ export default function AdminPage() {
             isSavingSettings={isSavingSettings}
             handleSaveSettings={handleSaveSettings}
           />
+        </section>
+
+        {/* Uploaded Prescriptions List Section */}
+        <section className="lg:col-span-12 bg-white rounded-3xl border border-gray-100 shadow-xs p-6 mt-2">
+          <div className="flex justify-between items-center mb-6">
+            <button
+              onClick={fetchPrescriptions}
+              disabled={isLoadingPrescriptions}
+              className="text-xs font-bold text-brand-primary hover:text-teal-950 flex items-center gap-1.5 cursor-pointer bg-teal-50 border border-teal-100/50 hover:bg-teal-100/40 px-3 py-1.5 rounded-xl transition-all"
+            >
+              <RefreshCw className={`w-3.5 h-3.5 ${isLoadingPrescriptions ? 'animate-spin' : ''}`} />
+              <span>تحديث القائمة</span>
+            </button>
+            <div className="text-right">
+              <h3 className="text-lg font-extrabold text-brand-primary">📋 الروشتات الطبية المرفوعة من العملاء</h3>
+              <p className="text-xs text-gray-400 mt-1">اضغط على عرض الروشتة لمراجعة صورة الوصفة الطبية التي أرسلها العميل</p>
+            </div>
+          </div>
+
+          {isLoadingPrescriptions ? (
+            <div className="py-12 text-center text-gray-500 font-bold text-sm">جاري تحميل الروشتات المرفوعة...</div>
+          ) : prescriptions.length > 0 ? (
+            <div className="overflow-x-auto">
+              <table className="w-full text-right border-collapse">
+                <thead>
+                  <tr className="border-b border-gray-100 text-xs font-extrabold text-gray-400">
+                    <th className="pb-3 text-left">الإجراء</th>
+                    <th className="pb-3">حجم الملف</th>
+                    <th className="pb-3">تاريخ الرفع</th>
+                    <th className="pb-3">كود الطلب المرجعي</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-50 text-sm font-semibold text-gray-700">
+                  {prescriptions.map((p) => (
+                    <tr key={p.code} className="hover:bg-gray-50/50 transition-colors">
+                      <td className="py-4 text-left">
+                        <a
+                          href={p.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-brand-primary hover:bg-teal-950 text-white text-xs font-bold px-4 py-2 rounded-xl transition-all inline-block cursor-pointer shadow-sm shadow-teal-950/5"
+                        >
+                          عرض الروشتة ↗
+                        </a>
+                      </td>
+                      <td className="py-4 text-gray-500 font-sans">
+                        {(p.size / 1024).toFixed(1)} KB
+                      </td>
+                      <td className="py-4 text-gray-500 font-sans">
+                        {new Date(p.createdAt).toLocaleString('ar-EG', {
+                          dateStyle: 'medium',
+                          timeStyle: 'short'
+                        })}
+                      </td>
+                      <td className="py-4 font-bold text-teal-950 font-sans">
+                        {p.code}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <div className="py-12 text-center text-gray-400 font-bold text-sm bg-gray-50/30 rounded-2xl border border-dashed border-gray-100">
+              لا توجد روشتات طبية مرفوعة حالياً.
+            </div>
+          )}
         </section>
 
       </main>
