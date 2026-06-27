@@ -9,6 +9,7 @@ import ProductCard from './ProductCard';
 import PrescriptionModal from './PrescriptionModal';
 import ContactSection from './ContactSection';
 import Footer from './Footer';
+import PrescriptionAnimation from './PrescriptionAnimation';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -80,53 +81,70 @@ export default function Catalog({ initialItems, config }: CatalogProps) {
       <Header config={config} onUploadClick={() => setShowUploadModal(true)} />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-8 md:py-16 bg-linear-to-b from-[#FAF9F5] to-brand-bg px-4 sm:px-6">
-        <motion.div
-          className="max-w-5xl mx-auto text-center relative z-10"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.span
-            className="inline-block bg-teal-50 border border-teal-100 text-brand-primary font-bold text-xs md:text-sm px-3.5 py-1.5 rounded-full mb-3.5"
-            variants={itemVariants}
-          >
-            نخدمكم برعاية وأمان على مدار الساعة
-          </motion.span>
-
-          <motion.h2
-            className="text-2xl md:text-5xl font-black text-brand-primary leading-tight mb-3"
-            variants={itemVariants}
-          >
-            طلب وتجهيز الدواء في مصر <br /> أصبح <span className="relative inline-block px-1">أسهل<motion.span className="absolute bottom-[-6px] right-0 left-0 h-1 bg-brand-secondary rounded-full origin-right" initial={{ scaleX: 0, opacity: 0 }} animate={{ scaleX: 1, opacity: 1 }} transition={{ delay: 0.7, duration: 0.8, ease: [0.25, 1, 0.5, 1] as any }} /></span>
-          </motion.h2>
-
-          <motion.p
-            className="text-xs md:text-lg text-gray-600 max-w-2xl mx-auto mb-6 font-medium leading-relaxed"
-            variants={itemVariants}
-          >
-            تصفح الكتالوج المباشر، ابحث عن أدويتك أو قم برفع صورتها الطبية (الروشتة) ونقوم بتجهيز طلبيتك للتوصيل الفوري أو الاستلام.
-          </motion.p>
-
+      <section className="relative overflow-hidden py-10 md:py-20 bg-linear-to-b from-[#FAF9F5] to-brand-bg px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center relative z-10">
+          
+          {/* Right Column: Text & CTA Buttons */}
           <motion.div
-            className="flex flex-col sm:flex-row justify-center items-center gap-3 max-w-md mx-auto"
-            variants={itemVariants}
+            className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-right"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
           >
-            <a
-              href="#catalog"
-              className="w-full sm:w-auto bg-brand-primary hover:bg-teal-900 text-white font-bold py-3 px-6 rounded-2xl shadow-lg shadow-teal-900/10 hover:shadow-xl transition-all duration-300 text-center text-sm md:text-base"
+            <motion.span
+              className="inline-block bg-teal-50 border border-teal-100 text-brand-primary font-bold text-xs md:text-sm px-3.5 py-1.5 rounded-full mb-3.5"
+              variants={itemVariants}
             >
-              تصفح كتالوج الأدوية
-            </a>
-            <button
-              onClick={() => setShowUploadModal(true)}
-              className="w-full sm:w-auto bg-white hover:bg-gray-50 text-brand-primary border border-brand-primary/10 hover:border-brand-primary/30 font-bold py-3 px-6 rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer text-sm md:text-base"
+              نخدمكم برعاية وأمان على مدار الساعة
+            </motion.span>
+
+            <motion.h2
+              className="text-2xl md:text-5xl font-black text-brand-primary leading-tight mb-3 w-full"
+              variants={itemVariants}
             >
-              <Upload className="w-4.5 h-4.5 text-brand-primary" />
-              <span>ارفع الروشتة الآن</span>
-            </button>
+              طلب وتجهيز الدواء في مصر <br /> أصبح <span className="relative inline-block px-1">أسهل<motion.span className="absolute bottom-[-6px] right-0 left-0 h-1 bg-brand-secondary rounded-full origin-right" initial={{ scaleX: 0, opacity: 0 }} animate={{ scaleX: 1, opacity: 1 }} transition={{ delay: 0.7, duration: 0.8, ease: [0.25, 1, 0.5, 1] as any }} /></span>
+            </motion.h2>
+
+            <motion.p
+              className="text-xs md:text-lg text-gray-600 max-w-2xl mb-6 font-medium leading-relaxed"
+              variants={itemVariants}
+            >
+              تصفح الكتالوج المباشر، ابحث عن أدويتك أو قم برفع صورتها الطبية (الروشتة) ونقوم بتجهيز طلبيتك للتوصيل الفوري أو الاستلام.
+            </motion.p>
+
+            <motion.div
+              className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-3 w-full max-w-md"
+              variants={itemVariants}
+            >
+              <a
+                href="#catalog"
+                className="w-full sm:w-auto bg-brand-primary hover:bg-teal-900 text-white font-bold py-3.5 px-6 rounded-2xl shadow-lg shadow-teal-900/10 hover:shadow-xl transition-all duration-300 text-center text-sm md:text-base cursor-pointer shrink-0"
+              >
+                تصفح كتالوج الأدوية
+              </a>
+              <button
+                onClick={() => setShowUploadModal(true)}
+                className="w-full sm:w-auto bg-white hover:bg-gray-50 text-brand-primary border border-brand-primary/10 hover:border-brand-primary/30 font-bold py-3.5 px-6 rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer text-sm md:text-base shrink-0"
+              >
+                <Upload className="w-4.5 h-4.5 text-brand-primary" />
+                <span>ارفع الروشتة الآن</span>
+              </button>
+            </motion.div>
           </motion.div>
-        </motion.div>
+
+          {/* Left Column: Interactive Micro-Animation Container */}
+          <div className="lg:col-span-5 flex justify-center items-center w-full">
+            <motion.div
+              variants={itemVariants}
+              initial="hidden"
+              animate="visible"
+              className="w-full flex justify-center"
+            >
+              <PrescriptionAnimation />
+            </motion.div>
+          </div>
+
+        </div>
 
         {/* Subtle Decorative Elements */}
         <div className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-1/3 w-72 h-72 rounded-full bg-teal-500/5 blur-3xl pointer-events-none"></div>
