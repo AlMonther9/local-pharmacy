@@ -18,7 +18,7 @@ export default function PrescriptionAnimation() {
     let active = true;
     let timer: NodeJS.Timeout;
     let timeElapsed = 0;
-    const stageDuration = 6000; // 6 seconds per stage for comfortable reading
+    const stageDuration = 4000; // 4 seconds per stage (slightly faster, pause on hover)
 
     const tick = () => {
       if (!active) return;
