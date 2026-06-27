@@ -250,7 +250,7 @@ export default function PrescriptionModal({ isOpen, onClose, config }: Prescript
               href={getWhatsAppPrescriptionLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full bg-brand-whatsapp hover:bg-[#20ba59] text-white font-extrabold py-3.5 px-4 rounded-xl text-center shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm cursor-pointer"
+              className="w-full bg-brand-primary hover:bg-teal-950 text-white font-extrabold py-3.5 px-4 rounded-xl text-center shadow-md shadow-teal-950/10 hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm cursor-pointer"
             >
               <MessageCircle className="w-5 h-5 fill-white" />
               <span>أرسل كود الطلب عبر واتساب لتجهيزه فوراً</span>
