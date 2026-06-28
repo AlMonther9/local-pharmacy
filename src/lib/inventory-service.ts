@@ -33,9 +33,9 @@ export async function getPharmacyConfig(): Promise<PharmacyConfig> {
     syncSource: 'local-csv',
     googleSheetId: '1tD2mF5WlYVwR3V-qB5C3tF_1F9Sg68T5Hk5Xo-Y46M8',
     whatsappNumber: '+201068359667',
-    pharmacyNameAr: "صيدلية المنذر",
-    pharmacyNameEn: "AlMonther Pharmacy",
-    addressAr: "شارع التسعين الشمالي، التجمع الخامس، القاهرة",
+    pharmacyNameAr: "صيدلية د. إسلام",
+    pharmacyNameEn: "Dr. Eslam's Pharmacy",
+    addressAr: "XCMV+5JH, Unnamed Road, New Cairo 3, Cairo Governorate 4713552",
     openingHoursAr: "مفتوح ٢٤ ساعة طوال أيام الأسبوع",
     phone: "01068359667"
   };

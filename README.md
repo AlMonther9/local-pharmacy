@@ -1,4 +1,4 @@
-# 🏥 صيدلية المنذر | AlMonther Pharmacy
+# 🏥 صيدلية د. إسلام | Dr. Eslam's Pharmacy
 
 A high-performance, mobile-first full-stack Next.js web application tailored for pharmacy cataloging, prescription handling, and direct patient-to-pharmacist WhatsApp order routing. 
 
@@ -71,7 +71,7 @@ sequenceDiagram
     UI->>UI: Reads file as DataURL (FileReader)
     Patient->>UI: Clicks "إرسال وتجهيز الروشتة" (Send & Prepare)
     Note over UI: Simulates file processing & uploads
-    UI->>UI: Generates unique tracking code (MONTHER-XXXX)
+    UI->>UI: Generates unique tracking code (ESLAM-XXXX)
     UI->>Patient: Displays success status & green button
     Patient->>UI: Clicks "أرسل كود الطلب عبر واتساب"
     UI->>WhatsApp: Redirects to wa.me with pre-composed code message
@@ -79,9 +79,9 @@ sequenceDiagram
 
 1. **Upload Selection**: The customer clicks "إرسال روشتة" in the header. The file selector accepts image files or medical PDFs.
 2. **Local Previewing**: Using the browser's `FileReader` API, the image is rendered locally on a canvas to provide visual confirmation.
-3. **Simulated File Upload**: The file is parsed and queued. The modal simulates a secure file ingestion process, returning a custom tracking identifier: `MONTHER-[1000-9999]`.
+3. **Simulated File Upload**: The file is parsed and queued. The modal simulates a secure file ingestion process, returning a custom tracking identifier: `ESLAM-[1000-9999]`.
 4. **WhatsApp Dispatch**: The customer is prompted to click a button that opens a pre-populated message:
-   > *"مرحباً صيدلية المنذر، لقد قمت برفع صورة الروشتة الروشتة الطبية الخاصة بي عبر الموقع الإلكتروني بنجاح. رمز الطلب المرجعي: MONTHER-5432..."*
+   > *"مرحباً صيدلية د. إسلام، لقد قمت برفع صورة الروشتة الطبية الخاصة بي عبر الموقع الإلكتروني بنجاح. رمز الطلب المرجعي: ESLAM-5432..."*
    This connects the patient directly to the pharmacist's live chat with their unique reference code.
 
 ---

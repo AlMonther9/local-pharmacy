@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Generate random reference code
-    const randCode = 'MONTHER-' + Math.floor(1000 + Math.random() * 9000);
+    const randCode = 'ESLAM-' + Math.floor(1000 + Math.random() * 9000);
     
     // Get file extension
     const ext = path.extname(file.name) || '.png';

@@ -75,14 +75,14 @@ export default function ContactSection({ config }: ContactSectionProps) {
         <div className="lg:col-span-7 rounded-3xl overflow-hidden border border-gray-100 shadow-sm relative min-h-[300px]">
           {/* Stylized Google Maps Iframe */}
           <iframe
-            src="https://maps.google.com/maps?q=30.0264,31.4886&z=15&output=embed&hl=ar"
+            src="https://maps.google.com/maps?q=29.9829375,31.4441094&z=15&output=embed&hl=ar"
             width="100%"
             height="100%"
             style={{ border: 0, minHeight: '350px' }}
             allowFullScreen={true}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title={`${config.pharmacyNameAr} التجمع الخامس`}
+            title={`${config.pharmacyNameAr} القاهرة الجديدة`}
             className="grayscale-20 contrast-110 opacity-95"
           ></iframe>
         </div>

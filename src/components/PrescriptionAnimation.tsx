@@ -131,7 +131,7 @@ export default function PrescriptionAnimation() {
                 <span className="text-xs font-bold text-brand-primary">جاهز للإرسال</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-sm font-black text-brand-primary tracking-wide font-sans">MONTHER-4821</span>
+                <span className="text-sm font-black text-brand-primary tracking-wide font-sans">ESLAM-4821</span>
                 <div className="w-8 h-8 rounded-lg bg-teal-50 flex items-center justify-center text-brand-primary">
                   <FileText className="w-4.5 h-4.5" />
                 </div>
@@ -165,7 +165,7 @@ export default function PrescriptionAnimation() {
             {/* CTA matching brand system */}
             <div className="w-full bg-white border border-teal-900/5 rounded-2xl p-3 shadow-xs">
               <a
-                href="https://wa.me/201068359667?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%B5%D9%8A%D8%AF%D9%84%D9%8A%D8%A9%20%D9%85%D9%86%D8%B0%D8%B1%D8%8C%20%D9%84%D9%82%D8%AF%20%D9%82%D9%85%D8%AA%20%D8%A8%D8%B1%D9%81%D8%B9%20%D8%A7%D9%84%D8%B1%D9%85%D8%B2%20%D8%A7%D9%84%D9%85%D8%B1%D8%AC%D8%B9%D9%8A%3A%20MONTHER-4821"
+                href="https://wa.me/201068359667?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%B5%D9%8A%D8%AF%D9%84%D9%8A%D8%A9%20%D8%AF.%20%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D9%84%D9%82%D8%AF%20%D9%82%D9%85%D8%AA%20%D8%A8%D8%B1%D9%81%D8%B9%20%D8%A7%D9%84%D8%B1%D9%85%D8%B2%20%D8%A7%D9%84%D9%85%D8%B1%D8%AC%D8%B9%D9%8A%3A%20ESLAM-4821"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-brand-primary hover:bg-teal-950 text-white font-extrabold py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-xs sm:text-sm cursor-pointer shadow-md shadow-teal-950/10 transition-all duration-300"

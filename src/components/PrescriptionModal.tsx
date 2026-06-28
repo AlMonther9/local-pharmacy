@@ -66,7 +66,7 @@ export default function PrescriptionModal({ isOpen, onClose, config }: Prescript
     } catch (error) {
       console.error('Error uploading prescription file:', error);
       // Fallback
-      const randCode = 'MONTHER-' + Math.floor(1000 + Math.random() * 9000);
+      const randCode = 'ESLAM-' + Math.floor(1000 + Math.random() * 9000);
       setPrescriptionCode(randCode);
       setUploadState('success');
     }
