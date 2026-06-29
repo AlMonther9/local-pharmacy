@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs/promises';
 import path from 'path';
+import { getUploadDir } from '@/lib/upload-utils';
 
 export async function GET(req: NextRequest) {
   try {
-    const uploadDir = path.join(process.cwd(), 'public/uploads/prescriptions');
+    const uploadDir = getUploadDir();
     
     // If folder doesn't exist, return empty list
     try {
@@ -22,7 +23,7 @@ export async function GET(req: NextRequest) {
         return {
           code: path.basename(file, path.extname(file)),
           filename: file,
-          url: `/uploads/prescriptions/${file}`,
+          url: `/api/uploads/prescriptions/${file}`,
           createdAt: stats.mtime.toISOString(),
           size: stats.size
         };

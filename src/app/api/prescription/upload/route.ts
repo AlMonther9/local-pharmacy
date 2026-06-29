@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs/promises';
 import path from 'path';
+import { ensureUploadDir } from '@/lib/upload-utils';
 
 export async function POST(req: NextRequest) {
   try {
@@ -18,18 +19,16 @@ export async function POST(req: NextRequest) {
     const ext = path.extname(file.name) || '.png';
     const filename = `${randCode}${ext}`;
     
-    // Directory path in public uploads
-    const uploadDir = path.join(process.cwd(), 'public/uploads/prescriptions');
-    
-    // Ensure directory exists
-    await fs.mkdir(uploadDir, { recursive: true });
+    // Get writeable upload directory
+    const uploadDir = await ensureUploadDir();
     
     // Write buffer to file system
     const buffer = Buffer.from(await file.arrayBuffer());
     const filePath = path.join(uploadDir, filename);
     await fs.writeFile(filePath, buffer);
     
-    const fileUrl = `/uploads/prescriptions/${filename}`;
+    // Serve dynamically through the API route
+    const fileUrl = `/api/uploads/prescriptions/${filename}`;
     
     return NextResponse.json({ 
       success: true, 
