@@ -22,10 +22,15 @@ export default function Header({ config, onUploadClick }: HeaderProps) {
           </span>
           
           <div className="flex items-center gap-3">
-            <span className="hidden md:flex items-center gap-1">
+            <a 
+              href="https://www.google.com/maps/search/?api=1&query=29.9829375,31.4441094"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:flex items-center gap-1 hover:text-brand-secondary transition-colors duration-200 cursor-pointer"
+            >
               <MapPin className="w-3.5 h-3.5 text-brand-secondary shrink-0" />
               <span>{config.addressAr}</span>
-            </span>
+            </a>
             <a 
               href={`tel:${config.phone}`} 
               className="flex items-center gap-1 bg-teal-800/60 hover:bg-teal-800 text-white py-0.5 px-2.5 rounded-full transition-all duration-300 font-bold"

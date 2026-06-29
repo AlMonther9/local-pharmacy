@@ -10,7 +10,7 @@ interface ContactSectionProps {
 
 export default function ContactSection({ config }: ContactSectionProps) {
   return (
-    <section className="bg-white border-t border-gray-100 py-12 px-4 sm:px-6">
+    <section id="contact" className="bg-white border-t border-gray-100 py-12 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
 
         {/* Contact Details */}

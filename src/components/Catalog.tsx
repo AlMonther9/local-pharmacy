@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Upload, X, AlertCircle } from 'lucide-react';
+import { Search, Upload, X, AlertCircle, Pill, Sparkles, Heart, Activity } from 'lucide-react';
 import { PharmacyItem, PharmacyConfig } from '@/lib/types';
 import Header from './Header';
 import ProductCard from './ProductCard';
@@ -81,9 +81,89 @@ export default function Catalog({ initialItems, config }: CatalogProps) {
       <Header config={config} onUploadClick={() => setShowUploadModal(true)} />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-10 md:py-20 bg-linear-to-b from-[#FAF9F5] to-brand-bg px-4 sm:px-6">
+      <section className="relative overflow-hidden py-10 md:py-20 bg-linear-to-b from-[#FAF9F5] via-[#FCFBF8] to-brand-bg px-4 sm:px-6">
+
+        {/* Creative Ambient Radial Background Glows */}
+        <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-radial-gradient from-teal-500/[0.07] to-transparent rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-10 right-1/4 w-[500px] h-[500px] bg-radial-gradient from-brand-secondary/[0.12] to-transparent rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[350px] h-[350px] bg-radial-gradient from-amber-100/[0.15] to-transparent rounded-full blur-[100px] pointer-events-none" />
+
+        {/* Elegant Curvy SVG Background Lines */}
+        <svg className="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-60" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M-100,120 C300,10 600,280 1000,130 C1300,30 1500,180 1600,80" stroke="#115E59" strokeWidth="1" strokeOpacity="0.08" fill="none" />
+          <path d="M-50,220 C400,80 500,420 1100,220 C1350,120 1500,320 1600,270" stroke="#7DD3FC" strokeWidth="1" strokeDasharray="4 4" strokeOpacity="0.18" fill="none" />
+          <path d="M100,380 C600,280 800,530 1300,380" stroke="#115E59" strokeWidth="1.5" strokeOpacity="0.04" fill="none" />
+        </svg>
+
+        {/* Floating Creative Wellness Elements */}
+        {/* Floating Pill Icon */}
+        <motion.div
+          animate={{
+            y: [0, -15, 0],
+            rotate: [0, 15, 0]
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 6,
+            ease: "easeInOut"
+          }}
+          className="absolute top-12 left-[12%] text-teal-800/10 pointer-events-none hidden md:block"
+        >
+          <Pill className="w-12 h-12" />
+        </motion.div>
+
+        {/* Floating Sparkles Icon */}
+        {/* <motion.div
+          animate={{
+            y: [0, 12, 0],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 5,
+            ease: "easeInOut",
+            delay: 1
+          }}
+          className="absolute top-[25%] right-[8%] text-brand-secondary/30 pointer-events-none hidden lg:block"
+        >
+          <Sparkles className="w-8 h-8" />
+        </motion.div> */}
+
+        {/* Floating Heart Icon */}
+        <motion.div
+          animate={{
+            y: [0, -8, 0],
+            rotate: [0, -10, 0]
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 7,
+            ease: "easeInOut",
+            delay: 0.5
+          }}
+          className="absolute bottom-16 left-[5%] text-teal-900/[0.06] pointer-events-none hidden md:block"
+        >
+          <Heart className="w-10 h-10 fill-teal-900/[0.02]" />
+        </motion.div>
+
+        {/* Floating Activity Pulse Icon */}
+        <motion.div
+          animate={{
+            scale: [1, 1.08, 1],
+            opacity: [0.15, 0.25, 0.15]
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 4,
+            ease: "easeInOut"
+          }}
+          className="absolute bottom-[35%] right-[42%] text-brand-secondary pointer-events-none hidden lg:block"
+        >
+          <Activity className="w-7 h-7" />
+        </motion.div>
+
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center relative z-10">
-          
+
           {/* Right Column: Text & CTA Buttons */}
           <motion.div
             className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-right"
@@ -91,18 +171,43 @@ export default function Catalog({ initialItems, config }: CatalogProps) {
             initial="hidden"
             animate="visible"
           >
-            <motion.span
-              className="inline-block bg-teal-50 border border-teal-100 text-brand-primary font-bold text-xs md:text-sm px-3.5 py-1.5 rounded-full mb-3.5"
+            <motion.div
+              className="border-r-2 border-brand-secondary pr-3 mb-4 text-xs md:text-sm text-brand-primary font-black"
               variants={itemVariants}
             >
               نخدمكم برعاية وأمان على مدار الساعة
-            </motion.span>
+            </motion.div>
 
             <motion.h2
               className="text-2xl md:text-5xl font-black text-brand-primary leading-tight mb-3 w-full"
               variants={itemVariants}
             >
-              طلب وتجهيز الدواء في مصر <br /> أصبح <span className="relative inline-block px-1">أسهل<motion.span className="absolute bottom-[-6px] right-0 left-0 h-1 bg-brand-secondary rounded-full origin-right" initial={{ scaleX: 0, opacity: 0 }} animate={{ scaleX: 1, opacity: 1 }} transition={{ delay: 0.7, duration: 0.8, ease: [0.25, 1, 0.5, 1] as any }} /></span>
+              طلب وتجهيز الدواء <br /> أصبح{" "}
+              <span className="relative inline-block px-1">
+                أسهل
+                <svg className="absolute -bottom-3 md:-bottom-3.5 right-0 left-0 w-full h-3 pointer-events-none" viewBox="0 0 100 12" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {/* First hand-drawn curve */}
+                  <motion.path
+                    d="M 3,5 C 30,10 65,2 97,5"
+                    stroke="#115E59"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
+                  />
+                  {/* Second crossing curve */}
+                  <motion.path
+                    d="M 8,8 C 35,4 70,10 94,6"
+                    stroke="#115E59"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{ delay: 0.95, duration: 0.75, ease: "easeOut" }}
+                  />
+                </svg>
+              </span>
             </motion.h2>
 
             <motion.p
@@ -145,10 +250,6 @@ export default function Catalog({ initialItems, config }: CatalogProps) {
           </div>
 
         </div>
-
-        {/* Subtle Decorative Elements */}
-        <div className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-1/3 w-72 h-72 rounded-full bg-teal-500/5 blur-3xl pointer-events-none"></div>
-        <div className="absolute top-1/3 right-0 transform -translate-y-1/2 translate-x-1/3 w-72 h-72 rounded-full bg-brand-secondary/10 blur-3xl pointer-events-none"></div>
       </section>
 
       {/* Catalog & Search Section */}
