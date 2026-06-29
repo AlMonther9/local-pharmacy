@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Upload, X, AlertCircle, Pill, Sparkles, Heart, Activity } from 'lucide-react';
 import { PharmacyItem, PharmacyConfig } from '@/lib/types';
@@ -74,6 +74,18 @@ export default function Catalog({ initialItems, config }: CatalogProps) {
       return nameAr.includes(query) || nameEn.includes(query) || cat.includes(query) || desc.includes(query);
     });
   }, [items, selectedCategory, searchQuery]);
+
+  // Load More pagination
+  const [visibleCount, setVisibleCount] = useState(12);
+
+  // Reset pagination count on search/category change
+  useEffect(() => {
+    setVisibleCount(12);
+  }, [searchQuery, selectedCategory]);
+
+  const displayedItems = useMemo(() => {
+    return filteredItems.slice(0, visibleCount);
+  }, [filteredItems, visibleCount]);
 
   return (
     <div className="grow flex flex-col">
@@ -307,26 +319,42 @@ export default function Catalog({ initialItems, config }: CatalogProps) {
         </div>
 
         {/* Product Grid */}
-        {filteredItems.length > 0 ? (
-          <motion.div
-            layout="position"
-            className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6"
-          >
-            <AnimatePresence mode="popLayout">
-              {filteredItems.map((item) => (
-                <motion.div
-                  key={item.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.96, y: 10 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.96, y: 10 }}
-                  transition={{ duration: 0.35, ease: 'easeOut' }}
+        {displayedItems.length > 0 ? (
+          <div className="flex flex-col gap-6">
+            <motion.div
+              layout="position"
+              className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6"
+            >
+              <AnimatePresence mode="popLayout">
+                {displayedItems.map((item) => (
+                  <motion.div
+                    key={item.id}
+                    layout
+                    initial={{ opacity: 0, scale: 0.96, y: 10 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.96, y: 10 }}
+                    transition={{ duration: 0.35, ease: 'easeOut' }}
+                  >
+                    <ProductCard item={item} config={config} />
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </motion.div>
+
+            {filteredItems.length > visibleCount && (
+              <div className="flex justify-center mt-6 mb-4">
+                <button
+                  onClick={() => setVisibleCount((prev) => prev + 12)}
+                  className="bg-white hover:bg-teal-50 text-brand-primary border border-brand-primary/10 hover:border-brand-primary/30 font-bold py-3 px-8 rounded-2xl transition-all duration-300 shadow-xs hover:shadow-md cursor-pointer text-sm flex items-center gap-2"
                 >
-                  <ProductCard item={item} config={config} />
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
+                  <span>عرض المزيد من الأدوية</span>
+                  <span className="text-xs bg-teal-50 text-brand-primary px-2.5 py-1 rounded-lg border border-brand-primary/10 font-bold">
+                    +{filteredItems.length - visibleCount}
+                  </span>
+                </button>
+              </div>
+            )}
+          </div>
         ) : (
           <div className="bg-white rounded-2xl border border-gray-100 p-12 text-center max-w-md mx-auto shadow-sm">
             <div className="w-16 h-16 bg-teal-50 text-brand-primary rounded-full flex items-center justify-center mx-auto mb-4 border border-teal-100">
