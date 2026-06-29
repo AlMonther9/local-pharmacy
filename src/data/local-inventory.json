@@ -106,5 +106,617 @@
     "price": 350,
     "isAvailable": false,
     "descriptionAr": "فيتامينات متعددة ومعادن متكاملة لدعم الحيوية والنشاط العام."
+  },
+  {
+    "id": "item-13",
+    "nameNameAr": "إيبوبروفين ٤٠٠ مجم",
+    "nameNameEn": "Ibuprofen 400mg",
+    "category": "أدوية",
+    "price": 55,
+    "isAvailable": true,
+    "descriptionAr": "مسكن للآلام ومضاد للالتهابات."
+  },
+  {
+    "id": "item-14",
+    "nameNameAr": "باراسيتامول شراب للأطفال",
+    "nameNameEn": "Paracetamol Syrup Kids",
+    "category": "أدوية",
+    "price": 32,
+    "isAvailable": true,
+    "descriptionAr": "خافض للحرارة ومسكن آمن للأطفال."
+  },
+  {
+    "id": "item-15",
+    "nameNameAr": "أموكسيسيلين ٥٠٠ مجم",
+    "nameNameEn": "Amoxicillin 500mg",
+    "category": "مضادات حيوية",
+    "price": 95,
+    "isAvailable": true,
+    "descriptionAr": "مضاد حيوي لعلاج التهابات الجهاز التنفسي."
+  },
+  {
+    "id": "item-16",
+    "nameNameAr": "فيتامين د٣ ١٠٠٠ وحدة",
+    "nameNameEn": "Vitamin D3 1000 IU",
+    "category": "فيتامينات ومكملات",
+    "price": 120,
+    "isAvailable": true,
+    "descriptionAr": "يدعم صحة العظام والمناعة."
+  },
+  {
+    "id": "item-17",
+    "nameNameAr": "زنك بلس كبسولات",
+    "nameNameEn": "Zinc Plus Capsules",
+    "category": "فيتامينات ومكملات",
+    "price": 85,
+    "isAvailable": true,
+    "descriptionAr": "مكمل غذائي لدعم المناعة وصحة الشعر."
+  },
+  {
+    "id": "item-18",
+    "nameNameAr": "غسول نيتروجينا للبشرة الدهنية",
+    "nameNameEn": "Neutrogena Oil-Free Cleanser",
+    "category": "مستحضرات تجميل",
+    "price": 350,
+    "isAvailable": true,
+    "descriptionAr": "منظف للبشرة الدهنية يقلل اللمعان والشوائب."
+  },
+  {
+    "id": "item-19",
+    "nameNameAr": "شامبو جونسون للأطفال ٣٠٠ مل",
+    "nameNameEn": "Johnson’s Baby Shampoo 300ml",
+    "category": "أطفال",
+    "price": 110,
+    "isAvailable": true,
+    "descriptionAr": "شامبو لطيف للعين والبشرة الحساسة."
+  },
+  {
+    "id": "item-20",
+    "nameNameAr": "جهاز قياس السكر أكيو تشيك",
+    "nameNameEn": "Accu-Chek Glucometer",
+    "category": "أجهزة ورعاية صحية",
+    "price": 1650,
+    "isAvailable": true,
+    "descriptionAr": "جهاز دقيق لقياس نسبة السكر في الدم."
+  },
+  {
+    "id": "item-21",
+    "nameNameAr": "مسكن دوليبران ٥٠٠ مجم",
+    "nameNameEn": "Doliprane 500mg",
+    "category": "أدوية",
+    "price": 60,
+    "isAvailable": true,
+    "descriptionAr": "مسكن وخافض للحرارة."
+  },
+  {
+    "id": "item-22",
+    "nameNameAr": "كلاريتين أقراص",
+    "nameNameEn": "Claritin Tablets",
+    "category": "أدوية",
+    "price": 75,
+    "isAvailable": true,
+    "descriptionAr": "مضاد للحساسية والاحتقان."
+  },
+  {
+    "id": "item-23",
+    "nameNameAr": "أزيثروميسين ٥٠٠ مجم",
+    "nameNameEn": "Azithromycin 500mg",
+    "category": "مضادات حيوية",
+    "price": 130,
+    "isAvailable": true,
+    "descriptionAr": "مضاد حيوي لعلاج التهابات الجهاز التنفسي والجلد."
+  },
+  {
+    "id": "item-24",
+    "nameNameAr": "فيتامين ب كومبلكس",
+    "nameNameEn": "B-Complex Vitamins",
+    "category": "فيتامينات ومكملات",
+    "price": 95,
+    "isAvailable": true,
+    "descriptionAr": "يدعم الطاقة وصحة الأعصاب."
+  },
+  {
+    "id": "item-25",
+    "nameNameAr": "أوميغا ٣ كبسولات",
+    "nameNameEn": "Omega-3 Capsules",
+    "category": "فيتامينات ومكملات",
+    "price": 180,
+    "isAvailable": true,
+    "descriptionAr": "مكمل غذائي لصحة القلب والمخ."
+  },
+  {
+    "id": "item-26",
+    "nameNameAr": "كريم نيفيا سوفت",
+    "nameNameEn": "Nivea Soft Cream",
+    "category": "مستحضرات تجميل",
+    "price": 95,
+    "isAvailable": true,
+    "descriptionAr": "ترطيب فوري للبشرة الجافة."
+  },
+  {
+    "id": "item-27",
+    "nameNameAr": "بودرة أطفال جونسون",
+    "nameNameEn": "Johnson’s Baby Powder",
+    "category": "أطفال",
+    "price": 75,
+    "isAvailable": true,
+    "descriptionAr": "تحافظ على جفاف وراحة بشرة الطفل."
+  },
+  {
+    "id": "item-28",
+    "nameNameAr": "ميزان حرارة ديجيتال",
+    "nameNameEn": "Digital Thermometer",
+    "category": "أجهزة ورعاية صحية",
+    "price": 250,
+    "isAvailable": true,
+    "descriptionAr": "لقياس درجة الحرارة بدقة وسرعة."
+  },
+  {
+    "id": "item-29",
+    "nameNameAr": "مسكن كيتوفان",
+    "nameNameEn": "Ketofan Tablets",
+    "category": "أدوية",
+    "price": 70,
+    "isAvailable": true,
+    "descriptionAr": "مسكن قوي للآلام والالتهابات."
+  },
+  {
+    "id": "item-30",
+    "nameNameAr": "أقراص تلفاست",
+    "nameNameEn": "Telfast Tablets",
+    "category": "أدوية",
+    "price": 85,
+    "isAvailable": true,
+    "descriptionAr": "مضاد للحساسية والاحتقان."
+  },
+  {
+    "id": "item-31",
+    "nameNameAr": "سيفيكسيم ٢٠٠ مجم",
+    "nameNameEn": "Cefixime 200mg",
+    "category": "مضادات حيوية",
+    "price": 140,
+    "isAvailable": true,
+    "descriptionAr": "مضاد حيوي لعلاج التهابات المسالك البولية والجهاز التنفسي."
+  },
+  {
+    "id": "item-32",
+    "nameNameAr": "فيتامين هـ كبسولات",
+    "nameNameEn": "Vitamin E Capsules",
+    "category": "فيتامينات ومكملات",
+    "price": 110,
+    "isAvailable": true,
+    "descriptionAr": "مضاد أكسدة يدعم صحة الجلد والشعر."
+  },
+  {
+    "id": "item-33",
+    "nameNameAr": "كالسيوم أقراص",
+    "nameNameEn": "Calcium Tablets",
+    "category": "فيتامينات ومكملات",
+    "price": 150,
+    "isAvailable": true,
+    "descriptionAr": "يدعم صحة العظام والأسنان."
+  },
+  {
+    "id": "item-34",
+    "nameNameAr": "غسول غارنييه للبشرة",
+    "nameNameEn": "Garnier Face Wash",
+    "category": "مستحضرات تجميل",
+    "price": 220,
+    "isAvailable": true,
+    "descriptionAr": "منظف للبشرة العادية والدهنية."
+  },
+  {
+    "id": "item-35",
+    "nameNameAr": "مناديل مبللة للأطفال",
+    "nameNameEn": "Baby Wet Wipes",
+    "category": "أطفال",
+    "price": 65,
+    "isAvailable": true,
+    "descriptionAr": "مناديل ناعمة لتنظيف بشرة الطفل."
+  },
+  {
+    "id": "item-36",
+    "nameNameAr": "جهاز بخار للأطفال",
+    "nameNameEn": "Nebulizer Machine",
+    "category": "أجهزة ورعاية صحية",
+    "price": 1450,
+    "isAvailable": true,
+    "descriptionAr": "جهاز استنشاق لعلاج مشاكل التنفس."
+  },
+  {
+    "id": "item-37",
+    "nameNameAr": "مسكن بروفين ٤٠٠ مجم",
+    "nameNameEn": "Brufen 400mg",
+    "category": "أدوية",
+    "price": 58,
+    "isAvailable": true,
+    "descriptionAr": "مسكن وخافض للحرارة."
+  },
+  {
+    "id": "item-38",
+    "nameNameAr": "أقراص زيرتك",
+    "nameNameEn": "Zyrtec Tablets",
+    "category": "أدوية",
+    "price": 80,
+    "isAvailable": true,
+    "descriptionAr": "مضاد للحساسية والاحتقان."
+  },
+  {
+    "id": "item-39",
+    "nameNameAr": "ميترونيدازول ٥٠٠ مجم",
+    "nameNameEn": "Metronidazole 500mg",
+    "category": "مضادات حيوية",
+    "price": 90,
+    "isAvailable": true,
+    "descriptionAr": "مضاد حيوي لعلاج الالتهابات البكتيرية والطفيلية."
+  },
+  {
+    "id": "item-40",
+    "nameNameAr": "فيتامين ك٢",
+    "nameNameEn": "Vitamin K2",
+    "category": "فيتامينات ومكملات",
+    "price": 135,
+    "isAvailable": true,
+    "descriptionAr": "يدعم صحة العظام والدورة الدموية."
+  },
+  {
+    "id": "item-41",
+    "nameNameAr": "ماغنسيوم أقراص",
+    "nameNameEn": "Magnesium Tablets",
+    "category": "فيتامينات ومكملات",
+    "price": 125,
+    "isAvailable": true,
+    "descriptionAr": "يدعم صحة العضلات والأعصاب."
+  },
+  {
+    "id": "item-42",
+    "nameNameAr": "مسكن نابروكسين ٥٠٠ مجم",
+    "nameNameEn": "Naproxen 500mg",
+    "category": "أدوية",
+    "price": 72,
+    "isAvailable": true,
+    "descriptionAr": "مسكن قوي للآلام المزمنة."
+  },
+  {
+    "id": "item-43",
+    "nameNameAr": "أقراص لورين",
+    "nameNameEn": "Lorin Tablets",
+    "category": "أدوية",
+    "price": 65,
+    "isAvailable": true,
+    "descriptionAr": "مضاد للحساسية والاحتقان."
+  },
+  {
+    "id": "item-44",
+    "nameNameAr": "سيفترياكسون حقن",
+    "nameNameEn": "Ceftriaxone Injection",
+    "category": "مضادات حيوية",
+    "price": 160,
+    "isAvailable": true,
+    "descriptionAr": "مضاد حيوي واسع المجال للحقن الوريدي."
+  },
+  {
+    "id": "item-45",
+    "nameNameAr": "فيتامين ب١٢ حقن",
+    "nameNameEn": "Vitamin B12 Injection",
+    "category": "فيتامينات ومكملات",
+    "price": 95,
+    "isAvailable": true,
+    "descriptionAr": "يدعم تكوين الدم وصحة الأعصاب."
+  },
+  {
+    "id": "item-46",
+    "nameNameAr": "بيوتين كبسولات",
+    "nameNameEn": "Biotin Capsules",
+    "category": "فيتامينات ومكملات",
+    "price": 140,
+    "isAvailable": true,
+    "descriptionAr": "مكمل لصحة الشعر والأظافر."
+  },
+  {
+    "id": "item-47",
+    "nameNameAr": "كريم أفين هيدراتينغ",
+    "nameNameEn": "Avene Hydrating Cream",
+    "category": "مستحضرات تجميل",
+    "price": 480,
+    "isAvailable": true,
+    "descriptionAr": "ترطيب للبشرة الحساسة والجافة."
+  },
+  {
+    "id": "item-48",
+    "nameNameAr": "زيت جونسون للأطفال",
+    "nameNameEn": "Johnson’s Baby Oil",
+    "category": "أطفال",
+    "price": 90,
+    "isAvailable": true,
+    "descriptionAr": "ترطيب وحماية لبشرة الطفل."
+  },
+  {
+    "id": "item-49",
+    "nameNameAr": "جهاز قياس ضغط أومرون",
+    "nameNameEn": "Omron Blood Pressure Monitor",
+    "category": "أجهزة ورعاية صحية",
+    "price": 2100,
+    "isAvailable": true,
+    "descriptionAr": "جهاز دقيق وسهل الاستخدام لقياس الضغط."
+  },
+  {
+    "id": "item-50",
+    "nameNameAr": "مسكن كاتافلام ٥٠ مجم",
+    "nameNameEn": "Cataflam 50mg",
+    "category": "أدوية",
+    "price": 68,
+    "isAvailable": true,
+    "descriptionAr": "مسكن للآلام وخافض للحرارة."
+  },
+  {
+    "id": "item-51",
+    "nameNameAr": "أقراص كلاريثرومايسين",
+    "nameNameEn": "Clarithromycin Tablets",
+    "category": "مضادات حيوية",
+    "price": 145,
+    "isAvailable": true,
+    "descriptionAr": "مضاد حيوي لعلاج التهابات الجهاز التنفسي."
+  },
+  {
+    "id": "item-52",
+    "nameNameAr": "فيتامين سي فوار",
+    "nameNameEn": "Vitamin C Effervescent",
+    "category": "فيتامينات ومكملات",
+    "price": 75,
+    "isAvailable": true,
+    "descriptionAr": "مكمل لدعم المناعة ونضارة البشرة."
+  },
+  {
+    "id": "item-53",
+    "nameNameAr": "فيتامين أ كبسولات",
+    "nameNameEn": "Vitamin A Capsules",
+    "category": "فيتامينات ومكملات",
+    "price": 115,
+    "isAvailable": true,
+    "descriptionAr": "يدعم صحة العين والبشرة."
+  },
+  {
+    "id": "item-54",
+    "nameNameAr": "غسول بيوديرما للبشرة",
+    "nameNameEn": "Bioderma Face Wash",
+    "category": "مستحضرات تجميل",
+    "price": 360,
+    "isAvailable": true,
+    "descriptionAr": "منظف للبشرة الحساسة والدهنية."
+  },
+  {
+    "id": "item-55",
+    "nameNameAr": "حليب أطفال نان ١",
+    "nameNameEn": "NAN Infant Formula 1",
+    "category": "أطفال",
+    "price": 420,
+    "isAvailable": true,
+    "descriptionAr": "حليب صناعي مدعم للرضع من الولادة."
+  },
+  {
+    "id": "item-56",
+    "nameNameAr": "ميزان وزن ديجيتال",
+    "nameNameEn": "Digital Weight Scale",
+    "category": "أجهزة ورعاية صحية",
+    "price": 550,
+    "isAvailable": true,
+    "descriptionAr": "ميزان دقيق لمتابعة الوزن."
+  },
+  {
+    "id": "item-57",
+    "nameNameAr": "مسكن فولتارين جل",
+    "nameNameEn": "Voltaren Gel",
+    "category": "أدوية",
+    "price": 95,
+    "isAvailable": true,
+    "descriptionAr": "جل موضعي لتخفيف آلام المفاصل والعضلات."
+  },
+  {
+    "id": "item-58",
+    "nameNameAr": "أقراص أموكسيسيلين/كلافولانيك",
+    "nameNameEn": "Amoxicillin/Clavulanic Acid",
+    "category": "مضادات حيوية",
+    "price": 155,
+    "isAvailable": true,
+    "descriptionAr": "مضاد حيوي لعلاج التهابات متنوعة."
+  },
+  {
+    "id": "item-59",
+    "nameNameAr": "فيتامين ب٦ أقراص",
+    "nameNameEn": "Vitamin B6 Tablets",
+    "category": "فيتامينات ومكملات",
+    "price": 85,
+    "isAvailable": true,
+    "descriptionAr": "يدعم صحة الأعصاب والدم."
+  },
+  {
+    "id": "item-60",
+    "nameNameAr": "فيتامين ب٢ أقراص",
+    "nameNameEn": "Vitamin B2 Tablets",
+    "category": "فيتامينات ومكملات",
+    "price": 80,
+    "isAvailable": true,
+    "descriptionAr": "يدعم إنتاج الطاقة وصحة الجلد."
+  },
+  {
+    "id": "item-61",
+    "nameNameAr": "كريم فيشي نورماديرم",
+    "nameNameEn": "Vichy Normaderm Cream",
+    "category": "مستحضرات تجميل",
+    "price": 520,
+    "isAvailable": true,
+    "descriptionAr": "علاج للبشرة الدهنية المعرضة لحب الشباب."
+  },
+  {
+    "id": "item-62",
+    "nameNameAr": "حفاضات بامبرز مقاس ٣",
+    "nameNameEn": "Pampers Size 3",
+    "category": "أطفال",
+    "price": 310,
+    "isAvailable": true,
+    "descriptionAr": "حفاضات عالية الامتصاص لحماية الطفل."
+  },
+  {
+    "id": "item-63",
+    "nameNameAr": "جهاز قياس نسبة الأكسجين",
+    "nameNameEn": "Oximeter Device",
+    "category": "أجهزة ورعاية صحية",
+    "price": 750,
+    "isAvailable": true,
+    "descriptionAr": "لقياس نسبة الأكسجين في الدم."
+  },
+  {
+    "id": "item-64",
+    "nameNameAr": "مسكن أسبرين ٨١ مجم",
+    "nameNameEn": "Aspirin 81mg",
+    "category": "أدوية",
+    "price": 45,
+    "isAvailable": true,
+    "descriptionAr": "مضاد للتجلط ومسكن خفيف."
+  },
+  {
+    "id": "item-65",
+    "nameNameAr": "أقراص دوكسيسايكلين",
+    "nameNameEn": "Doxycycline Tablets",
+    "category": "مضادات حيوية",
+    "price": 135,
+    "isAvailable": true,
+    "descriptionAr": "مضاد حيوي لعلاج التهابات الجلد والجهاز التنفسي."
+  },
+  {
+    "id": "item-66",
+    "nameNameAr": "فيتامين ب٥ أقراص",
+    "nameNameEn": "Vitamin B5 Tablets",
+    "category": "فيتامينات ومكملات",
+    "price": 90,
+    "isAvailable": true,
+    "descriptionAr": "يدعم صحة الجلد والشعر."
+  },
+  {
+    "id": "item-67",
+    "nameNameAr": "فيتامين ب١ أقراص",
+    "nameNameEn": "Vitamin B1 Tablets",
+    "category": "فيتامينات ومكملات",
+    "price": 88,
+    "isAvailable": true,
+    "descriptionAr": "يدعم صحة الأعصاب والعضلات."
+  },
+  {
+    "id": "item-68",
+    "nameNameAr": "كريم كلين آند كلير",
+    "nameNameEn": "Clean & Clear Cream",
+    "category": "مستحضرات تجميل",
+    "price": 210,
+    "isAvailable": true,
+    "descriptionAr": "علاج للبشرة المعرضة لحب الشباب."
+  },
+  {
+    "id": "item-69",
+    "nameNameAr": "شامبو موستيلا للأطفال",
+    "nameNameEn": "Mustela Baby Shampoo",
+    "category": "أطفال",
+    "price": 260,
+    "isAvailable": true,
+    "descriptionAr": "شامبو لطيف لبشرة وشعر الطفل."
+  },
+  {
+    "id": "item-70",
+    "nameNameAr": "جهاز قياس حرارة بالأشعة",
+    "nameNameEn": "Infrared Thermometer",
+    "category": "أجهزة ورعاية صحية",
+    "price": 980,
+    "isAvailable": true,
+    "descriptionAr": "لقياس الحرارة عن بعد بدقة."
+  },
+  {
+    "id": "item-71",
+    "nameNameAr": "مسكن باراسيتامول ٥٠٠ مجم",
+    "nameNameEn": "Paracetamol 500mg",
+    "category": "أدوية",
+    "price": 52,
+    "isAvailable": true,
+    "descriptionAr": "مسكن وخافض للحرارة."
+  },
+  {
+    "id": "item-72",
+    "nameNameAr": "أقراص إريثرومايسين",
+    "nameNameEn": "Erythromycin Tablets",
+    "category": "مضادات حيوية",
+    "price": 125,
+    "isAvailable": true,
+    "descriptionAr": "مضاد حيوي لعلاج التهابات الجلد والجهاز التنفسي."
+  },
+  {
+    "id": "item-73",
+    "nameNameAr": "فيتامين ب٧ أقراص",
+    "nameNameEn": "Vitamin B7 Tablets",
+    "category": "فيتامينات ومكملات",
+    "price": 92,
+    "isAvailable": true,
+    "descriptionAr": "يدعم صحة الشعر والأظافر."
+  },
+  {
+    "id": "item-74",
+    "nameNameAr": "فيتامين ب٩ أقراص",
+    "nameNameEn": "Vitamin B9 Tablets",
+    "category": "فيتامينات ومكملات",
+    "price": 100,
+    "isAvailable": true,
+    "descriptionAr": "يدعم تكوين الدم وصحة الحمل."
+  },
+  {
+    "id": "item-75",
+    "nameNameAr": "كريم نيتروجينا هيدراتينغ",
+    "nameNameEn": "Neutrogena Hydrating Cream",
+    "category": "مستحضرات تجميل",
+    "price": 330,
+    "isAvailable": true,
+    "descriptionAr": "ترطيب للبشرة الجافة والحساسة."
+  },
+  {
+    "id": "item-76",
+    "nameNameAr": "مناديل فاين للأطفال",
+    "nameNameEn": "Fine Baby Wipes",
+    "category": "أطفال",
+    "price": 70,
+    "isAvailable": true,
+    "descriptionAr": "مناديل ناعمة لتنظيف بشرة الطفل."
+  },
+  {
+    "id": "item-77",
+    "nameNameAr": "جهاز ضغط ديجيتال صغير",
+    "nameNameEn": "Compact Digital BP Monitor",
+    "category": "أجهزة ورعاية صحية",
+    "price": 1350,
+    "isAvailable": true,
+    "descriptionAr": "جهاز صغير لقياس ضغط الدم بدقة."
+  },
+  {
+    "id": "item-78",
+    "nameNameAr": "مسكن كيتولاك حقن",
+    "nameNameEn": "Ketolac Injection",
+    "category": "أدوية",
+    "price": 85,
+    "isAvailable": true,
+    "descriptionAr": "مسكن قوي للآلام الحادة."
+  },
+  {
+    "id": "item-79",
+    "nameNameAr": "أقراص ليفوفلوكساسين",
+    "nameNameEn": "Levofloxacin Tablets",
+    "category": "مضادات حيوية",
+    "price": 165,
+    "isAvailable": true,
+    "descriptionAr": "مضاد حيوي لعلاج التهابات الجهاز البولي والتنفس."
+  },
+  {
+    "id": "item-80",
+    "nameNameAr": "فيتامين ب٣ أقراص",
+    "nameNameEn": "Vitamin B3 Tablets",
+    "category": "فيتامينات ومكملات",
+    "price": 95,
+    "isAvailable": true,
+    "descriptionAr": "يدعم صحة الجلد والجهاز العصبي."
   }
 ]
